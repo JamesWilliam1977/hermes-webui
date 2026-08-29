@@ -1,0 +1,632 @@
+# Instincts generated from https://github.com/JamesWilliam1977/hermes-webui
+# Generated: 2026-04-29T05:44:43.826Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: hermes-webui-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Commit Length
+
+## Action
+
+Write moderate-length commit messages (~54 characters)
+
+## Evidence
+
+- Average commit message length: 54 chars
+- Based on 69 commits
+
+---
+id: hermes-webui-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: hermes-webui-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: hermes-webui-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: hermes-webui-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: hermes-webui-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: hermes-webui-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~13x per month
+- Files: **/*.test.*, **/api/**
+
+---
+id: hermes-webui-workflow-test-driven-development
+trigger: "when adding new functionality"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Workflow Test Driven Development
+
+## Action
+
+Follow the test-driven-development workflow:
+1. Write failing test
+2. Implement code to pass test
+3. Refactor if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: **/*.test.*, **/*.spec.*, src/**/*
+
+---
+id: hermes-webui-workflow-feature-development-with-i18n-and-ui
+trigger: "when doing feature development with i18n and ui"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Workflow Feature Development With I18n And Ui
+
+## Action
+
+Follow the feature-development-with-i18n-and-ui workflow:
+1. Implement backend logic (api/*.py, e.g. routes.py, upload.py, onboarding.py).
+2. Update frontend JS for UI logic (static/ui.js, static/panels.js, etc).
+3. Update or create HTML elements as needed (static/index.html).
+4. Add or update CSS for styling (static/style.css).
+5. Add new i18n keys for all supported locales (static/i18n.js).
+6. Write or update tests if applicable (tests/...).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: api/routes.py, api/upload.py, api/onboarding.py
+
+---
+id: hermes-webui-workflow-model-or-provider-addition-or-update
+trigger: "when doing model or provider addition or update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Workflow Model Or Provider Addition Or Update
+
+## Action
+
+Follow the model-or-provider-addition-or-update workflow:
+1. Update model/provider lists and mappings in backend config (api/config.py, api/providers.py).
+2. Update frontend dropdowns or UI mappings (static/index.html, static/ui.js).
+3. Update onboarding/setup flows if needed (api/onboarding.py, api/routes.py).
+4. Update or add tests to verify new models/providers appear (tests/...).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: api/config.py, api/providers.py, api/onboarding.py
+
+---
+id: hermes-webui-workflow-bugfix-with-targeted-test
+trigger: "when doing bugfix with targeted test"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Workflow Bugfix With Targeted Test
+
+## Action
+
+Follow the bugfix-with-targeted-test workflow:
+1. Identify and fix the bug in the relevant source file(s) (api/*.py, static/*.js).
+2. Add or update a test covering the bug scenario (tests/test_issueXXX_*.py or similar).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: api/*.py, static/*.js, tests/test_issue*.py
+
+---
+id: hermes-webui-workflow-ui-component-refactor-or-removal
+trigger: "when doing ui component refactor or removal"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Workflow Ui Component Refactor Or Removal
+
+## Action
+
+Follow the ui-component-refactor-or-removal workflow:
+1. Remove or refactor the JS logic for the component (static/*.js).
+2. Remove or update the HTML markup (static/index.html).
+3. Remove or update CSS rules (static/style.css).
+4. Update i18n keys if tooltips/labels change (static/i18n.js).
+5. Update or remove related tests (tests/...).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: static/*.js, static/index.html, static/style.css
+
+---
+id: hermes-webui-workflow-test-driven-infrastructure-change
+trigger: "when doing test driven infrastructure change"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Workflow Test Driven Infrastructure Change
+
+## Action
+
+Follow the test-driven-infrastructure-change workflow:
+1. Implement backend change (api/*.py).
+2. Add a new test file or update an existing one to cover the new logic (tests/test_*.py).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: api/*.py, tests/test_*.py
+
+---
+id: hermes-webui-instinct-file-naming
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct File Naming
+
+## Action
+
+Use snake_case for file names
+
+## Evidence
+
+- Pattern in namingConventions.files
+- Observed in files: api/routes.py, api/upload.py
+
+---
+id: hermes-webui-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: hermes-webui-instinct-class-naming
+trigger: "When defining a class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: hermes-webui-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constants
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: hermes-webui-instinct-import-style
+trigger: "When importing modules in Python"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Import Style
+
+## Action
+
+Prefer relative imports
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: hermes-webui-instinct-export-style
+trigger: "When exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: hermes-webui-instinct-test-file-pattern
+trigger: "When creating a test file for frontend code"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Test File Pattern
+
+## Action
+
+Name test files with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in testing.filePattern: *.test.ts
+- Example: src/utils/validation.test.ts
+
+---
+id: hermes-webui-instinct-test-location
+trigger: "When adding tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Test Location
+
+## Action
+
+Place test files in the separate 'tests' directory
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+- Common folder: tests
+
+---
+id: hermes-webui-instinct-bugfix-test-pattern
+trigger: "When fixing a bug"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Bugfix Test Pattern
+
+## Action
+
+Add or update a targeted test named tests/test_issueXXX_*.py
+
+## Evidence
+
+- Workflow: bugfix-with-targeted-test
+- Example: tests/test_issue*.py
+
+---
+id: hermes-webui-instinct-infra-test-pattern
+trigger: "When making backend or infrastructure changes"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Infra Test Pattern
+
+## Action
+
+Add or update a dedicated test file in tests/test_*.py
+
+## Evidence
+
+- Workflow: test-driven-infrastructure-change
+- Example: tests/test_*.py
+
+---
+id: hermes-webui-instinct-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Commit Prefix
+
+## Action
+
+Start the commit message with a prefix: fix, feat, chore, docs, or test
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: 'fix: ...', 'feat: ...', 'chore: ...', 'docs: ...', 'test: ...'
+
+---
+id: hermes-webui-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 54 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength: 54
+
+---
+id: hermes-webui-instinct-feature-i18n-ui
+trigger: "When adding a new user-facing feature involving backend, frontend, and i18n"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Feature I18n Ui
+
+## Action
+
+Implement backend logic, update frontend JS, HTML, CSS, add i18n keys, and write/update tests
+
+## Evidence
+
+- Workflow: feature-development-with-i18n-and-ui
+- Example commits and files: api/routes.py, static/ui.js, static/index.html, static/style.css, static/i18n.js, tests/
+
+---
+id: hermes-webui-instinct-model-provider-update
+trigger: "When adding or updating a model/provider"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Model Provider Update
+
+## Action
+
+Update backend config, frontend UI, onboarding flows, and add/update tests
+
+## Evidence
+
+- Workflow: model-or-provider-addition-or-update
+- Example files: api/config.py, api/providers.py, static/ui.js, tests/
+
+---
+id: hermes-webui-instinct-bugfix-with-test
+trigger: "When fixing a bug"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Bugfix With Test
+
+## Action
+
+Fix the bug in source files and add or update a targeted regression test
+
+## Evidence
+
+- Workflow: bugfix-with-targeted-test
+- Example: fix in api/*.py or static/*.js and test in tests/test_issue*.py
+
+---
+id: hermes-webui-instinct-ui-refactor
+trigger: "When refactoring or removing a UI component"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Ui Refactor
+
+## Action
+
+Update or remove related JS, HTML, CSS, i18n, and tests
+
+## Evidence
+
+- Workflow: ui-component-refactor-or-removal
+- Example files: static/*.js, static/index.html, static/style.css, static/i18n.js, tests/
+
+---
+id: hermes-webui-instinct-infra-change-with-test
+trigger: "When making backend or infrastructure changes"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/hermes-webui
+---
+
+# Hermes Webui Instinct Infra Change With Test
+
+## Action
+
+Implement the change in api/*.py and add/update a dedicated test file in tests/test_*.py
+
+## Evidence
+
+- Workflow: test-driven-infrastructure-change
+- Example files: api/*.py, tests/test_*.py
+
